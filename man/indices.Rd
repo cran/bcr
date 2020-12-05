@@ -2,22 +2,38 @@
 % Please edit documentation in R/indices.R
 \name{indices}
 \alias{indices}
-\alias{sector_indices}
-\title{Gets the Moroccan Market and Sector indices}
+\alias{sectoral_indices}
+\title{Moroccan Market and Sectoral indices}
 \usage{
 indices()
 
-sector_indices()
+sectoral_indices()
+}
+\value{
+the \code{indices()} function returns a \code{data.frame} with the following columns:
+\itemize{
+\item \code{type} : the category of the index.
+\item \code{name} : name of the index.
+\item \code{last_date} : last date the price of the index changed.
+\item \code{price} : the price of the index.
+\item \code{open} : the opening price of the index.
+\item \code{close} : the closing price of the index.
+\item \code{variation} : variation of the price.
+\item \code{low} : lowest price of the index.
+\item \code{high} : highest price of the index
+}
+
+the \code{sectoral_indices()} function returns a \code{data.frame} with the following columns:
+\itemize{
+\item \code{name} : name of the sector.
+\item \code{price} : latest price of the index.
+\item \code{variation} : variation of the price of the index.
+}
 }
 \description{
-\code{indices} (resp. \code{sector_indices}) Returns a data.frame containing all the Market Indices (resp. Sector Indices) listed in \href{http://leboursier.ma/details/marche.html}{\strong{Le Boursier}}.
-}
-\details{
-The column names are self explanatory.
+Gets the Moroccan Market indices (\code{indices()}) or Sectoral indices (\code{sectoral_indices()}) that are listed in \href{http://leboursier.ma/details/marche.html}{\strong{Le Boursier}}.
 }
 \examples{
-\dontrun{
-  indices()}
-\dontrun{
-  sector_indices()}
+indices()
+sectoral_indices()
 }
